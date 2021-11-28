@@ -1,4 +1,4 @@
-import { reactive, ref } from 'vue'
+import { ref } from 'vue'
 import { InflationType } from '../types/InflatitonTypeEnum'
 import { MalaysiaPart } from '../types/malaysiaPartEnum'
 

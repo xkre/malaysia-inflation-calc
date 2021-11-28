@@ -10,7 +10,6 @@ import DataSource from './components/DataSource.vue';
   <div class="app-container flex flex-col justify-between pt-20">
     <div class="flex flex-col">
       <h1 class="mb-6">Malaysia Inflation Calculator</h1>
-      <!-- <hello-world msg="Hello Vue 3 + TypeScript + Vite" /> -->
       <calculator></calculator>
       <detailed-info></detailed-info>
     </div>

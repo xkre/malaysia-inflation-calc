@@ -2,10 +2,6 @@ interface InflationDataset {
   [key: number]: number;
 }
 
-// type CPIKey = `${InflationType}`;
-
-// type BaseCPIData = Record<CPIKey, number>;
-
 interface CPIData extends Record<string, number> {
   total: number;
   food: number;

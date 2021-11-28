@@ -92,13 +92,3 @@ export const getCPI = (year1: number, year2: number, type: InflationType, part: 
 
   return relativePrice
 }
-
-// export const getFoodCPI = (year1: number, year2: number): number => {
-//   const year1Cpi = cpiData[year1]?.food
-//   const year2Cpi = cpiData[year2]?.food
-
-//   if (year1Cpi === undefined || year2Cpi === undefined)
-//     throw 'No Data'
-
-//   return year2Cpi / year1Cpi
-// }
