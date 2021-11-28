@@ -12,7 +12,7 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.9.3",
     "autoprefixer": "^10.4.0",
-    "postcss": "^8.4.3",
+    "postcss": "^8.4.4",
     "sass": "^1.43.5",
     "stylelint-config-recommended": "^6.0.0",
     "tailwindcss": "^2.2.19",
