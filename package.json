@@ -1,0 +1,24 @@
+{
+  "name": "malaysia-inflation-calc",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.2.16"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.9.3",
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.3",
+    "sass": "^1.43.5",
+    "stylelint-config-recommended": "^6.0.0",
+    "tailwindcss": "^2.2.19",
+    "typescript": "^4.4.3",
+    "vite": "^2.6.4",
+    "vite-plugin-pwa": "^0.11.7",
+    "vue-tsc": "^0.29.0"
+  }
+}

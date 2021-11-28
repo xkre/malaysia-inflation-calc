@@ -1,0 +1,7 @@
+{
+  "editor.tabSize": 2,
+  "css.validate": false,
+  "scss.validate": false,
+  "stylelint.enable": true,
+  "typescript.tsdk": "node_modules/typescript/lib", 
+}
