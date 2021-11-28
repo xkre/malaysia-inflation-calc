@@ -16,6 +16,12 @@
       <option :value="InflationType.RestaurantHotels"> Restaurants and Hotels </option>
       <option :value="InflationType.Misc"> Miscellaneous Goods and Services </option>
     </select>
+    <div class="flex justify-center radio-list mb-8" v-if="inflationType !== InflationType.General">
+      <label> <input type="radio" name="part" v-model="part" :value="MalaysiaPart.Malaysia"> Malaysia </label>
+      <label> <input type="radio" name="part" v-model="part" :value="MalaysiaPart.Semenanjung"> Semenanjung </label>
+      <label> <input type="radio" name="part" v-model="part" :value="MalaysiaPart.SabahLabuan"> Sabah & Labuan </label>
+      <label> <input type="radio" name="part" v-model="part" :value="MalaysiaPart.Sarawak"> Sarawak </label>
+    </div>
     <p>
       RM <input v-model.number="value1" class="value-input">
       in <input type="number" v-model.lazy.number="year1" class="year-input">
@@ -30,8 +36,9 @@ import { ref, computed } from "vue"
 import { getCumulativeInflation, getCPI } from '../services/inflationService'
 import { calculatorState } from "../state/calculatorState"
 import { InflationType } from '../types/InflatitonTypeEnum'
+import { MalaysiaPart } from "../types/malaysiaPartEnum"
 
-const { year1, year2, value1, inflationType } = calculatorState
+const { year1, year2, value1, inflationType, part } = calculatorState
 
 const value2 = computed(() => {
   try {
@@ -40,11 +47,7 @@ const value2 = computed(() => {
     if (inflationType.value === InflationType.General) {
       inflationRate = getCumulativeInflation(year1.value, year2.value)
     } else {
-      inflationRate = getCPI(year1.value, year2.value, inflationType.value)
-    }
-
-    if (year1.value < year2.value) {
-
+      inflationRate = getCPI(year1.value, year2.value, inflationType.value, part.value)
     }
 
     return (value1.value * inflationRate).toFixed(2)
@@ -75,5 +78,20 @@ input {
 
 select {
   @apply border-blue-500 border-b-2;
+}
+
+.radio-list{
+  label {
+    @apply relative px-4;
+    @apply cursor-pointer;
+    
+    input[type="radio"] {
+      @apply absolute -left-3 top-1;
+    }
+
+    + label {
+      @apply ml-4;
+    }
+  }
 }
 </style>

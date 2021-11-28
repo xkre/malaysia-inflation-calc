@@ -5,7 +5,9 @@ import {
   cpiSemenanjung, 
   inflation 
 } from "../assets/data"
+
 import { InflationType } from "../types/InflatitonTypeEnum"
+import { MalaysiaPart } from "../types/malaysiaPartEnum"
 
 export const getYearlyInflation = (year1: number, year2: number): YearlyInflation[] => {
   const smaller = year1 < year2 ? year1 : year2
@@ -60,11 +62,23 @@ export const getCumulativeInflation = (year1: number, year2: number): number => 
   return cumulInflation
 }
 
-export const getCPI = (year1: number, year2: number, type: InflationType): number => {
+export const getCPI = (year1: number, year2: number, type: InflationType, part: MalaysiaPart): number => {
   if (type === InflationType.General)
     throw 'Error'
 
-  const cpiData = cpiSemenanjung
+  let cpiData: CPIDataset
+
+  if (part === MalaysiaPart.Malaysia) {
+    cpiData = cpiMalaysia
+  } else if (part === MalaysiaPart.Semenanjung) {
+    cpiData = cpiSemenanjung
+  } else if (part === MalaysiaPart.SabahLabuan) {
+    cpiData = cpiSabahLabuan
+  } else if (part === MalaysiaPart.Sarawak) {
+    cpiData = cpiSarawak
+  } else {
+    throw 'Error: Malaysia Part selection'
+  }
 
   const year1Cpi = cpiData[year1]?.[type]
   const year2Cpi = cpiData[year2]?.[type]
