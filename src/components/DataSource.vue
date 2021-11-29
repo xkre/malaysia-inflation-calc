@@ -17,7 +17,7 @@
 import { calculatorState } from '../state/calculatorState';
 import { InflationType } from '../types/InflatitonTypeEnum';
 
-const {inflationType} = calculatorState
+const { inflationType } = calculatorState
 </script>
 
 <style lang="scss" scoped>

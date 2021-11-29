@@ -1,6 +1,6 @@
 <template>
   <div>
-    <select v-model="inflationType" class="mb-8">
+    <select v-model="inflationType" class="mb-8 max-w-full">
       <option :value="InflationType.General"> General Inflation </option>
       <option :value="InflationType.TotalCPI"> Overall CPI </option>
       <option :value="InflationType.Food"> Food Prices </option>
@@ -16,7 +16,7 @@
       <option :value="InflationType.RestaurantHotels"> Restaurants and Hotels </option>
       <option :value="InflationType.Misc"> Miscellaneous Goods and Services </option>
     </select>
-    <div class="flex justify-center radio-list mb-8" v-if="inflationType !== InflationType.General">
+    <div class="flex flex-col md:flex-row justify-center md:items-center items-start radio-list mb-8" v-if="inflationType !== InflationType.General">
       <label> <input type="radio" name="part" v-model="part" :value="MalaysiaPart.Malaysia"> Malaysia </label>
       <label> <input type="radio" name="part" v-model="part" :value="MalaysiaPart.Semenanjung"> Semenanjung </label>
       <label> <input type="radio" name="part" v-model="part" :value="MalaysiaPart.SabahLabuan"> Sabah & Labuan </label>
@@ -81,16 +81,13 @@ select {
 }
 
 .radio-list{
+  @apply px-4;
   label {
-    @apply relative px-4;
+    @apply relative px-4 mx-4;
     @apply cursor-pointer;
     
     input[type="radio"] {
       @apply absolute -left-3 top-1;
-    }
-
-    + label {
-      @apply ml-4;
     }
   }
 }

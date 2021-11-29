@@ -7,7 +7,7 @@ import DataSource from './components/DataSource.vue';
 </script>
 
 <template>
-  <div class="app-container flex flex-col justify-between pt-20">
+  <div class="app-container flex flex-col justify-between pt-8">
     <div class="flex flex-col">
       <h1 class="mb-6">Malaysia Inflation Calculator</h1>
       <calculator></calculator>
