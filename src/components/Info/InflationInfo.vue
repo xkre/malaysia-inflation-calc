@@ -21,11 +21,11 @@ const yearlyInflation = computed((): YearlyInflationValue [] => {
   const { year1, year2, value1 } = calculatorState
 
   const yearlyInflation = getYearlyInflation(year1.value, year2.value)
-  const yearlyInflationPrice: YearlyInflationValue [] = []
+  const yearlyInflationPrices: YearlyInflationValue [] = []
 
   let compoundingValue = value1.value
 
-  for(const year of yearlyInflation) {
+  for (const year of yearlyInflation) {
     compoundingValue = compoundingValue * year.inflation / 100 + compoundingValue
 
     const inflationprice = {
@@ -34,10 +34,10 @@ const yearlyInflation = computed((): YearlyInflationValue [] => {
       value: compoundingValue
     }
 
-    yearlyInflationPrice.push(inflationprice)
+    yearlyInflationPrices.push(inflationprice)
   }
 
-  return yearlyInflationPrice
+  return yearlyInflationPrices
 })
 </script>
 
