@@ -6,7 +6,7 @@ import { router } from "../router"
 import type { LocationAsPath, RouteLocationOptions, RouteQueryAndHash } from "vue-router"
 import { RouteState } from "../types/route"
 
-const {year1, year2, value1, inflationType, part} = calculatorState
+const { year1, year2, value1, inflationType, part } = calculatorState
 
 export const setupWatch = () => {
   watch([year1, year2, value1, inflationType, part, showInfo], () => {
