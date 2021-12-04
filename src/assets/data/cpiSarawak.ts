@@ -238,5 +238,5 @@ export const cpiSarawak: CPIDataset = {
     education: 114.4,
     restaurantHotels: 127.3,
     misc: 114.2,
-  }
+  },
 }

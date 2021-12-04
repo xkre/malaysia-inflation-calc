@@ -12,7 +12,7 @@ export const cpiMalaysia: CPIDataset = {
     recreative: 93.3,
     education: 90.8,
     restaurantHotels: 83.2,
-    misc: 88
+    misc: 88,
   },
   2006: {
     total: 90.9,
@@ -27,7 +27,7 @@ export const cpiMalaysia: CPIDataset = {
     recreative: 93.9,
     education: 92.3,
     restaurantHotels: 86.3,
-    misc: 90
+    misc: 90,
   },
   2007: {
     total: 92.7,
@@ -42,7 +42,7 @@ export const cpiMalaysia: CPIDataset = {
     recreative: 95.2,
     education: 93.9,
     restaurantHotels: 89.5,
-    misc: 90.8
+    misc: 90.8,
   },
   2008: {
     total: 97.7,
@@ -57,7 +57,7 @@ export const cpiMalaysia: CPIDataset = {
     recreative: 97,
     education: 96.1,
     restaurantHotels: 95.3,
-    misc: 93.8
+    misc: 93.8,
   },
   2009: {
     total: 98.3,
@@ -72,7 +72,7 @@ export const cpiMalaysia: CPIDataset = {
     recreative: 98.4,
     education: 98.4,
     restaurantHotels: 98.1,
-    misc: 97.3
+    misc: 97.3,
   },
   2010: {
     total: 100,
@@ -87,7 +87,7 @@ export const cpiMalaysia: CPIDataset = {
     recreative: 100,
     education: 100,
     restaurantHotels: 100,
-    misc: 100
+    misc: 100,
   },
   2011: {
     total: 103.2,
@@ -102,7 +102,7 @@ export const cpiMalaysia: CPIDataset = {
     recreative: 102,
     education: 102.2,
     restaurantHotels: 105.9,
-    misc: 102.4
+    misc: 102.4,
   },
   2012: {
     total: 104.9,
@@ -117,7 +117,7 @@ export const cpiMalaysia: CPIDataset = {
     recreative: 103.2,
     education: 104.7,
     restaurantHotels: 109,
-    misc: 104.4
+    misc: 104.4,
   },
   2013: {
     total: 107.1,
@@ -132,7 +132,7 @@ export const cpiMalaysia: CPIDataset = {
     recreative: 103.3,
     education: 107.2,
     restaurantHotels: 111.7,
-    misc: 104.7
+    misc: 104.7,
   },
   2014: {
     total: 110.5,
@@ -147,7 +147,7 @@ export const cpiMalaysia: CPIDataset = {
     recreative: 104.9,
     education: 109.8,
     restaurantHotels: 116.9,
-    misc: 105.4
+    misc: 105.4,
   },
   2015: {
     total: 112.8,
@@ -162,7 +162,7 @@ export const cpiMalaysia: CPIDataset = {
     recreative: 106.7,
     education: 112.4,
     restaurantHotels: 121.7,
-    misc: 109.7
+    misc: 109.7,
   },
   2016: {
     total: 115.2,
@@ -177,7 +177,7 @@ export const cpiMalaysia: CPIDataset = {
     recreative: 109.4,
     education: 114.8,
     restaurantHotels: 125.1,
-    misc: 112.9
+    misc: 112.9,
   },
   2017: {
     total: 119.5,
@@ -192,7 +192,7 @@ export const cpiMalaysia: CPIDataset = {
     recreative: 111.5,
     education: 116.7,
     restaurantHotels: 128.2,
-    misc: 114.2
+    misc: 114.2,
   },
   2018: {
     total: 120.7,
@@ -207,7 +207,7 @@ export const cpiMalaysia: CPIDataset = {
     recreative: 111,
     education: 118,
     restaurantHotels: 130.2,
-    misc: 112.6
+    misc: 112.6,
   },
   2019: {
     total: 121.5,
@@ -222,7 +222,7 @@ export const cpiMalaysia: CPIDataset = {
     recreative: 111.8,
     education: 119.7,
     restaurantHotels: 131.8,
-    misc: 113
+    misc: 113,
   },
   2020: {
     total: 121.5,
@@ -237,6 +237,6 @@ export const cpiMalaysia: CPIDataset = {
     recreative: 97.5,
     education: 112.3,
     restaurantHotels: 120.9,
-    misc: 132.4
+    misc: 132.4,
   },
 }

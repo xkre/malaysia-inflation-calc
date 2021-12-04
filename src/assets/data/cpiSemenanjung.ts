@@ -1,5 +1,4 @@
-export const cpiSemenanjung: CPIDataset =
-{
+export const cpiSemenanjung: CPIDataset = {
   2005: {
     total: 87.8,
     food: 81.1,
@@ -239,5 +238,5 @@ export const cpiSemenanjung: CPIDataset =
     education: 121.7,
     restaurantHotels: 132.5,
     misc: 116.3,
-  }
+  },
 }
