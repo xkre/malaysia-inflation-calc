@@ -1,4 +1,4 @@
-import { createMemoryHistory, createRouter, createWebHistory, useRouter } from "vue-router";
+import {  createRouter, createWebHistory, LocationAsPath, RouteLocationOptions, RouteQueryAndHash } from "vue-router"
 
 export const router = createRouter({
   history: createWebHistory(),

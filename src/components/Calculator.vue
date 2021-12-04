@@ -36,12 +36,10 @@ import { calculatorState } from "../state/calculatorState"
 </script>
 
 <script setup lang="ts">
-import { computed, watch } from "vue"
-import type { LocationAsPath, RouteLocationOptions, RouteQueryAndHash } from 'vue-router'
+import { computed } from "vue"
 import { getCumulativeInflation, getCPIRate } from '../services/inflationService'
 import { InflationType } from '../types/InflatitonTypeEnum'
 import { MalaysiaPart } from "../types/malaysiaPartEnum"
-import { router } from "../router"
 
 const { year1, year2, value1, inflationType, part } = calculatorState
 
@@ -66,22 +64,6 @@ const value2 = computed((): string => {
   }
 })
 
-watch([year1, year2, value1, inflationType, part], () => {
-  const state = {
-    y1: year1.value,
-    y2: year2.value,
-    v1: value1.value,
-    i: inflationType.value,
-    p: part.value
-  }
-
-  const location: (RouteQueryAndHash & LocationAsPath & RouteLocationOptions) = {
-    path: '/',
-    query: state
-  }
-
-  router.replace(location)
-})
 </script>
 
 <style lang="scss" scoped>
