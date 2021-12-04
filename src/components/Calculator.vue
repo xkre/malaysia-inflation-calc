@@ -31,28 +31,36 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import { ref, computed } from "vue"
-import { getCumulativeInflation, getCPI } from '../services/inflationService'
+<script lang="ts">
 import { calculatorState } from "../state/calculatorState"
+</script>
+
+<script setup lang="ts">
+import { computed } from "vue"
+import { getCumulativeInflation, getCPIRate } from '../services/inflationService'
 import { InflationType } from '../types/InflatitonTypeEnum'
 import { MalaysiaPart } from "../types/malaysiaPartEnum"
 
 const { year1, year2, value1, inflationType, part } = calculatorState
 
-const value2 = computed(() => {
+const value2 = computed((): string => {
   try {
     let inflationRate: number
 
     if (inflationType.value === InflationType.General) {
       inflationRate = getCumulativeInflation(year1.value, year2.value)
     } else {
-      inflationRate = getCPI(year1.value, year2.value, inflationType.value, part.value)
+      inflationRate = getCPIRate(year1.value, year2.value, inflationType.value, part.value)
     }
 
     return (value1.value * inflationRate).toFixed(2)
   } catch (er) {
-    return er
+    if (typeof er === 'string') {
+      return er
+    }
+
+    console.error(er)
+    return 'Error'
   }
 })
 </script>
