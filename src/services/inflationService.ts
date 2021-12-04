@@ -62,10 +62,7 @@ export const getCumulativeInflation = (year1: number, year2: number): number => 
   return cumulInflation
 }
 
-export const getCPI = (year1: number, year2: number, type: InflationType, part: MalaysiaPart): number => {
-  if (type === InflationType.General)
-    throw 'Error'
-
+const getCPIData = (part: MalaysiaPart): CPIDataset => {
   let cpiData: CPIDataset
 
   if (part === MalaysiaPart.Malaysia) {
@@ -80,11 +77,30 @@ export const getCPI = (year1: number, year2: number, type: InflationType, part: 
     throw 'Error: Malaysia Part selection'
   }
 
+  return cpiData
+}
+
+export const getCPI = (year1: number, year2: number, type: InflationType, part: MalaysiaPart): {year1: number, year2: number} => {
+  const cpiData = getCPIData(part)
+
   const year1Cpi = cpiData[year1]?.[type]
   const year2Cpi = cpiData[year2]?.[type]
 
-  if (year1Cpi === undefined || year2Cpi === undefined)
-    throw 'No Data'
+  return {
+    year1: year1Cpi,
+    year2: year2Cpi
+  }
+}
+
+export const getCPIRate = (year1: number, year2: number, type: InflationType, part: MalaysiaPart): number => {
+  if (type === InflationType.General) throw 'Error'
+
+  const cpiData = getCPI(year1, year2, type, part)
+
+  const year1Cpi = cpiData.year1
+  const year2Cpi = cpiData.year2
+
+  if (year1Cpi === undefined || year2Cpi === undefined) throw 'No Data'
 
   const relativePrice = year2Cpi / year1Cpi
 
