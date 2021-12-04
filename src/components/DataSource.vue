@@ -8,8 +8,9 @@
         estimate (2021)
       </li>
       <li v-else>
-        <a href="https://www.data.gov.my/data/ms_MY/dataset/consumer-price-index-2010-100-index-number-for-main-groups-malaysia-annual">data.gov.my</a> 
-        (2005 - 2020)
+        data.gov.my
+        <a href="https://www.data.gov.my/data/ms_MY/dataset/consumer-price-index-cpi-for-main-groups-peninsular-malaysiasabah-and-sarawak-annual">(2000 - 2005)</a> 
+        <a href="https://www.data.gov.my/data/ms_MY/dataset/consumer-price-index-2010-100-index-number-for-main-groups-malaysia-annual">(2005 - 2020)</a> 
       </li>
     </ul>
     <p class="text-xs mt-2">Disclaimer: This is not a financial advice. Data are from consumer perspective </p>
