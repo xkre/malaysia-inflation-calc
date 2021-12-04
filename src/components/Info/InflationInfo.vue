@@ -1,9 +1,9 @@
 <template>
-  <div class="flex flex-col items-center justify-center container flex-wrap">
-    <div v-for="yearInflation in yearlyInflation" :key="yearInflation.year" class="flex flex-row yearly justify-items-start justify-start content-center items-start text-left">
-      <div class="year"> {{ yearInflation.year }}: </div>    
-      <div class="inflation"> {{ yearInflation.inflation.toFixed(2) }} </div>    
-      <div class="pl-2"> {{ yearInflation.price.toFixed(2) }} </div>    
+  <div class="flex flex-col container flex-wrap">
+    <div v-for="yearInflation in yearlyInflation" :key="yearInflation.year" class="flex flex-row self-center">
+      <div class=""> {{ yearInflation.year }}: </div>    
+      <div class="pl-2"> {{ yearInflation.inflation.toFixed(2) }} </div>    
+      <div class="pl-2"> {{ yearInflation.value.toFixed(2) }} </div>    
     </div>
   </div>
 </template>
@@ -13,36 +13,35 @@ import { computed } from '@vue/reactivity'
 import { getYearlyInflation } from '../../services/inflationService'
 import { calculatorState } from '../../state/calculatorState'
 
-const yearlyInflation = computed(() => {
+type YearlyInflationValue = YearlyInflation & {
+  value: number;
+}
+
+const yearlyInflation = computed((): YearlyInflationValue [] => {
   const { year1, year2, value1 } = calculatorState
 
-  const inflationYear = getYearlyInflation(year1.value, year2.value)
-  const inflationYearPrice = []
+  const yearlyInflation = getYearlyInflation(year1.value, year2.value)
+  const yearlyInflationPrice: YearlyInflationValue [] = []
 
-  let yearPrice = value1.value
+  let compoundingValue = value1.value
 
-  for(const year of inflationYear) {
-    yearPrice = yearPrice * year.inflation / 100 + yearPrice
+  for(const year of yearlyInflation) {
+    compoundingValue = compoundingValue * year.inflation / 100 + compoundingValue
+
     const inflationprice = {
       year: year.year,
       inflation: year.inflation,
-      price: yearPrice
+      value: compoundingValue
     }
 
-    inflationYearPrice.push(inflationprice)
+    yearlyInflationPrice.push(inflationprice)
   }
 
-  return inflationYearPrice
+  return yearlyInflationPrice
 })
 </script>
 
 <style lang="scss" scoped>
-.year{
-  @apply flex pr-1  text-left;
-}
-
-
-
 .container {
   max-height: calc(100vh - 20rem);
 }
