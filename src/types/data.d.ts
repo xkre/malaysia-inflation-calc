@@ -2,7 +2,7 @@ interface InflationDataset {
   [key: number]: number;
 }
 
-interface CPIData extends Record<string, number> {
+interface CPIData extends Record<string, number | undefined> {
   total: number;
   food: number;
   alcoholTobacco: number;
@@ -14,7 +14,7 @@ interface CPIData extends Record<string, number> {
   communication: number;
   recreative: number;
   education: number;
-  restaurantHotels: number;
+  restaurantHotels?: number;
   misc: number;
 }
 

@@ -80,7 +80,7 @@ const getCPIData = (part: MalaysiaPart): CPIDataset => {
   return cpiData
 }
 
-export const getCPI = (year1: number, year2: number, type: InflationType, part: MalaysiaPart): {year1: number, year2: number} => {
+export const getCPI = (year1: number, year2: number, type: InflationType, part: MalaysiaPart): {year1?: number, year2?: number} => {
   const cpiData = getCPIData(part)
 
   const year1Cpi = cpiData[year1]?.[type]
