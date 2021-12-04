@@ -25,7 +25,7 @@ const { inflationType } = calculatorState
 
 <style lang="scss" scoped>
 .footer {
-  @apply pb-4 text-left;
+  @apply pb-2 text-left;
   margin-top: auto;
 
   ul {
