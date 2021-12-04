@@ -1,15 +1,13 @@
 import { ref } from 'vue'
+import { getQueryParam } from '../services/routeService'
 import { InflationType } from '../types/InflatitonTypeEnum'
 import { MalaysiaPart } from '../types/malaysiaPartEnum'
 
-const url_string = window.location.href
-const url = new URL(url_string)
-
-const year1 = Number(url.searchParams.get('y1') ?? 2005)
-const year2 = Number(url.searchParams.get('y2') ?? 2020)
-const value1 = Number(url.searchParams.get('v1') ?? 1500)
-const inflationType = (url.searchParams.get('i') ?? InflationType.General) as InflationType
-const part = Number(url.searchParams.get('p') ?? MalaysiaPart.Malaysia) as MalaysiaPart
+const year1 = Number(getQueryParam('y1') ?? 2005)
+const year2 = Number(getQueryParam('y2') ?? 2020)
+const value1 = Number(getQueryParam('v1') ?? 1500)
+const inflationType = (getQueryParam('i') ?? InflationType.General) as InflationType
+const part = Number(getQueryParam('p') ?? MalaysiaPart.Malaysia) as MalaysiaPart
 
 export const calculatorState = {
   year1: ref(year1),

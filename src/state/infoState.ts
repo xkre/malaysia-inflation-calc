@@ -1,8 +1,6 @@
 import { ref } from 'vue'
+import { getQueryParam } from '../services/routeService'
 
-const url_string = window.location.href
-const url = new URL(url_string)
-
-const state = Boolean(Number(url.searchParams.get('s') ?? 0))
+const state = Boolean(Number(getQueryParam('s') ?? 0))
 
 export const showInfo = ref(state)
