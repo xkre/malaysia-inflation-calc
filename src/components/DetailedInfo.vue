@@ -1,6 +1,8 @@
 <template>
   <div class="flex flex-col">
-    <button class="text-blue-500" @click="show = !show"> {{ show ? 'Hide' : 'More'}} Info </button>
+    <button class="text-blue-500 hover:shadow-inner bg-blue-50 w-80 self-center rounded-sm" @click="show = !show"> 
+      {{ show ? 'Hide' : 'More'}} Info 
+    </button>
     <template v-if="show">
       <cpi-info v-if="inflationType !== InflationType.General"></cpi-info>
       <inflation-info v-else></inflation-info>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <select v-model="inflationType" class="mb-8 max-w-full">
+    <select v-model="inflationType" class="max-w-full">
       <option :value="InflationType.General"> General Inflation </option>
       <option :value="InflationType.TotalCPI"> Overall CPI </option>
       <option :value="InflationType.Food"> Food Prices </option>
@@ -16,14 +16,14 @@
       <option :value="InflationType.RestaurantHotels"> Restaurants and Hotels </option>
       <option :value="InflationType.Misc"> Miscellaneous Goods and Services </option>
     </select>
-    <div class="flex flex-col md:flex-row justify-center md:items-center items-start radio-list mb-8" v-if="inflationType !== InflationType.General">
+    <div class="flex-col md:flex-row md:items-center items-start radio-list mt-8" v-if="inflationType !== InflationType.General">
       <label> <input type="radio" name="part" v-model="part" :value="MalaysiaPart.Malaysia"> Malaysia </label>
       <label> <input type="radio" name="part" v-model="part" :value="MalaysiaPart.Semenanjung"> Semenanjung </label>
       <label> <input type="radio" name="part" v-model="part" :value="MalaysiaPart.SabahLabuan"> Sabah & Labuan </label>
       <label> <input type="radio" name="part" v-model="part" :value="MalaysiaPart.Sarawak"> Sarawak </label>
     </div>
-    <p>
-      RM <input v-model.number="value1" class="value-input">
+    <p class="mt-8">
+      RM <input type="number" v-model.number="value1" class="value-input">
       in <input type="number" v-model.lazy.number="year1" class="year-input">
       is equivalent to RM <input v-model="value2" disabled class="value-input">
       in <input type="number" v-model.lazy.number="year2" class="year-input">
@@ -76,6 +76,9 @@ input {
 
   &.year-input {
     @apply w-16;
+  }
+
+  &[type="number"]{
     @apply pr-0;
   }
 
@@ -89,7 +92,9 @@ select {
 }
 
 .radio-list{
-  @apply px-4;
+  @apply flex px-4;
+  @apply justify-center;
+  
   label {
     @apply relative px-4 mx-4;
     @apply cursor-pointer;
