@@ -3,7 +3,7 @@
     <select v-model="inflationType" class="max-w-full">
       <option :value="InflationType.General"> General Inflation </option>
       <option :value="InflationType.TotalCPI"> Overall CPI </option>
-      <option :value="InflationType.Food"> Food Prices </option>
+      <option :value="InflationType.Food"> Food </option>
       <option :value="InflationType.AlcoholTobacco"> Alcoholic Beverages and Tobacco </option>
       <option :value="InflationType.Clothing"> Clothing and Footwear </option>
       <option :value="InflationType.Housing"> Housing, Water, Electricity, Gas and Other Fuels </option>

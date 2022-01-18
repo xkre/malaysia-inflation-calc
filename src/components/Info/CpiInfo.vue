@@ -21,7 +21,6 @@ import { getCPI } from '../../services/inflationService'
 import { calculatorState } from '../../state/calculatorState'
 
 const { year1, year2, inflationType, part } = calculatorState
-const { abs } = Math
 
 const cpiData = computed(() => {
   const cpi = getCPI(year1.value, year2.value, inflationType.value, part.value)
