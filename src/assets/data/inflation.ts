@@ -60,5 +60,5 @@ export const inflation: InflationDataset = {
   2018:	0.884709161,
   2019:	0.662891866,
   2020:	-1.138702154,
-  2021:	2.25  // Estimated
+  2021:	3.3  // Nov 2021 CPI
 }
