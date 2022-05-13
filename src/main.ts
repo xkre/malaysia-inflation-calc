@@ -1,10 +1,15 @@
-import { createApp } from 'vue'
 import App from './App.vue'
-import './assets/index.scss'
-
+import { createApp } from 'vue'
+import { useMatomoto } from './configuration/useMatamoto'
+import { router } from './router'
 import { setupWatch } from './state/routeState'
 
+import './assets/index.scss'
+
 const app = createApp(App)
+
+useMatomoto(app, router)
+
 app.mount('#app')
 
 setupWatch()
