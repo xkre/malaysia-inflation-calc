@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "vue": "^3.2.16",
+    "vue-matomo": "^4.1.0",
     "vue-router": "^4.0.12"
   },
   "devDependencies": {
