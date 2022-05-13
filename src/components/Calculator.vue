@@ -1,6 +1,6 @@
 <template>
   <div>
-    <select v-model="inflationType" class="max-w-full">
+    <select v-model="inflationType" @change="typeChanged" class="max-w-full">
       <option :value="InflationType.General"> General Inflation </option>
       <option :value="InflationType.TotalCPI"> Overall CPI </option>
       <option :value="InflationType.Food"> Food </option>
@@ -40,6 +40,7 @@ import { computed } from "vue"
 import { getCumulativeInflation, getCPIRate } from '../services/inflationService'
 import { InflationType } from '../types/InflatitonTypeEnum'
 import { MalaysiaPart } from "../types/malaysiaPartEnum"
+import { trackEvent } from "../helpers/matomo"
 
 const { year1, year2, value1, inflationType, part } = calculatorState
 
@@ -63,6 +64,11 @@ const value2 = computed((): string => {
     return 'Error'
   }
 })
+
+const typeChanged = () => {
+  const val = inflationType.value
+  trackEvent('Calculator', 'Change Type', val)
+}
 
 </script>
 
