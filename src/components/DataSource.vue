@@ -14,7 +14,7 @@
         <br />
         <a href="https://newss.statistics.gov.my/newss-portalx/ep/epFreeDownloadContentSearch.seam?cid=13057"> newss.statistics.gov.my (2021 - 2022(AUG))</a>
         <br />
-        <a href="https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2Fxkre%2Fmalaysia-inflation-calc%2Fmain%2Fsrc%2Fassets%2Fdata%2FCPI%2520dataset.xlsx">Raw data</a>
+        <a href="https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Finflation-calc.xkre.me%2FCpiDataset.xlsx">Raw data</a>
       </li>
     </ul>
     <p class="text-xs mt-2">Note: somehow data from data.gov.my and newss.statistics.gov.my is different for the same period </p>
