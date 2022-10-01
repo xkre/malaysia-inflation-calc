@@ -15,6 +15,7 @@
       <option :value="InflationType.Education"> Education </option>
       <option :value="InflationType.RestaurantHotels"> Restaurants and Hotels </option>
       <option :value="InflationType.Misc"> Miscellaneous Goods and Services </option>
+      <option :value="InflationType.BigMac"> Big Mac Index </option>
     </select>
     <div class="flex-col md:flex-row md:items-center items-start radio-list mt-8" v-if="inflationType !== InflationType.General">
       <label> <input type="radio" name="part" v-model="part" :value="MalaysiaPart.Malaysia"> Malaysia </label>

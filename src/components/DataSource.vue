@@ -7,6 +7,9 @@
         (1960 - 2021),
         estimate (2022)
       </li>
+      <li v-else-if="inflationType === InflationType.BigMac">
+        <a href="https://data.nasdaq.com/data/ECONOMIST/BIGMAC_MYS-big-mac-index-malaysia"> data.nasdaq.com </a> 
+      </li>
       <li v-else>
         data.gov.my
         <a href="https://www.data.gov.my/data/ms_MY/dataset/consumer-price-index-cpi-for-main-groups-peninsular-malaysiasabah-and-sarawak-annual">(2000 - 2005)</a> 

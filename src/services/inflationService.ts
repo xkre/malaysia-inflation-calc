@@ -5,6 +5,7 @@ import {
   cpiSemenanjung, 
   inflation 
 } from "../assets/data"
+import { bigMacIndex } from "../assets/data/misc/bigMacIndex"
 
 import { InflationType } from "../types/InflatitonTypeEnum"
 import { MalaysiaPart } from "../types/malaysiaPartEnum"
@@ -81,14 +82,25 @@ const getCPIData = (part: MalaysiaPart): CPIDataset => {
 }
 
 export const getCPI = (year1: number, year2: number, type: InflationType, part: MalaysiaPart): {year1?: number, year2?: number} => {
-  const cpiData = getCPIData(part)
+  if (type === InflationType.BigMac) {
+    const year1Cpi = bigMacIndex[year1]
+    const year2Cpi = bigMacIndex[year2]
 
-  const year1Cpi = cpiData[year1]?.[type]
-  const year2Cpi = cpiData[year2]?.[type]
+    return {
+      year1: year1Cpi,
+      year2: year2Cpi
+    }
+  }
+  else {
+    const cpiData = getCPIData(part)
 
-  return {
-    year1: year1Cpi,
-    year2: year2Cpi
+    const year1Cpi = cpiData[year1]?.[type]
+    const year2Cpi = cpiData[year2]?.[type]
+  
+    return {
+      year1: year1Cpi,
+      year2: year2Cpi
+    }
   }
 }
 

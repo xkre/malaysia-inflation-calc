@@ -21,3 +21,7 @@ interface CPIData extends Record<string, number | undefined> {
 interface CPIDataset {
   [key: number]: CPIData;
 }
+
+interface MiscDataset extends Record<number, number> {
+  [key: number]: number
+}
