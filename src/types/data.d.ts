@@ -5,7 +5,7 @@ interface InflationDataset {
 interface CPIData extends Record<string, number | undefined> {
   total: number;
   food: number;
-  alcoholTobacco: number;
+  alcoholTobacco?: number;
   clothing: number;
   housing: number;
   furnishing: number;
