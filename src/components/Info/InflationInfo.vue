@@ -8,14 +8,16 @@
   </div>
 </template>
 
+<script lang="ts">
+type YearlyInflationValue = YearlyInflation & {
+  value: number;
+}
+</script>
+
 <script setup lang="ts">
 import { computed } from '@vue/reactivity'
 import { getYearlyInflation } from '../../services/inflationService'
 import { calculatorState } from '../../state/calculatorState'
-
-type YearlyInflationValue = YearlyInflation & {
-  value: number;
-}
 
 const yearlyInflation = computed((): YearlyInflationValue [] => {
   const { year1, year2, value1 } = calculatorState
