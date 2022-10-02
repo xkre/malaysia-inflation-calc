@@ -6,8 +6,7 @@ A simple calculator that calculates the equivalent purchasing power between two 
 
 This project uses Vue 3 + Typescript + Tailwindcss 2
 
-## Recommended IDE Setup
-
+Recommended IDE Setup
 - [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
 
 Requirements
