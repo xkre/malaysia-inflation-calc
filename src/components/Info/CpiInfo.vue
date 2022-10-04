@@ -17,8 +17,8 @@
 
 <script setup lang="ts">
 import { computed } from '@vue/reactivity'
-import { getCPI } from '../../services/inflationService'
-import { calculatorState } from '../../state/calculatorState'
+import { getCPI } from '@/services/inflationService'
+import { calculatorState } from '@/state/calculatorState'
 
 const { year1, year2, inflationType, part } = calculatorState
 

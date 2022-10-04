@@ -16,8 +16,8 @@ type YearlyInflationValue = YearlyInflation & {
 
 <script setup lang="ts">
 import { computed } from '@vue/reactivity'
-import { getYearlyInflation } from '../../services/inflationService'
-import { calculatorState } from '../../state/calculatorState'
+import { getYearlyInflation } from '@/services/inflationService'
+import { calculatorState } from '@/state/calculatorState'
 
 const yearlyInflation = computed((): YearlyInflationValue [] => {
   const { year1, year2, value1 } = calculatorState

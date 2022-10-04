@@ -38,10 +38,10 @@ import { calculatorState } from "../state/calculatorState"
 
 <script setup lang="ts">
 import { computed } from "vue"
-import { getCumulativeInflation, getCPIRate } from '../services/inflationService'
-import { InflationType } from '../types/InflatitonTypeEnum'
-import { MalaysiaPart } from "../types/malaysiaPartEnum"
-import { trackEvent } from "../helpers/matomo"
+import { getCumulativeInflation, getCPIRate } from '@/services/inflationService'
+import { InflationType } from '@/types/InflatitonTypeEnum'
+import { MalaysiaPart } from "@/types/malaysiaPartEnum"
+import { trackEvent } from "@/helpers/matomo"
 
 const { year1, year2, value1, inflationType, part } = calculatorState
 

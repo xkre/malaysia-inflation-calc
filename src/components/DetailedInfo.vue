@@ -14,10 +14,10 @@
 import CpiInfo from './Info/CpiInfo.vue'
 import InflationInfo from './Info/InflationInfo.vue'
 
-import { calculatorState } from '../state/calculatorState'
-import { InflationType } from '../types/InflatitonTypeEnum'
-import { showInfo } from '../state/infoState'
-import { trackEvent } from '../helpers/matomo'
+import { calculatorState } from '@/state/calculatorState'
+import { InflationType } from '@/types/InflatitonTypeEnum'
+import { showInfo } from '@/state/infoState'
+import { trackEvent } from '@/helpers/matomo'
 
 const { inflationType } = calculatorState
 

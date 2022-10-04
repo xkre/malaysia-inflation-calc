@@ -1,5 +1,5 @@
 import { ref } from 'vue'
-import { getQueryParam } from '../services/routeService'
+import { getQueryParam } from '@/services/routeService'
 
 const state = Boolean(Number(getQueryParam('s') ?? 0))
 
