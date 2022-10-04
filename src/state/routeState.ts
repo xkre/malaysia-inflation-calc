@@ -3,8 +3,8 @@ import { showInfo } from "@/state/infoState"
 import { watch } from 'vue'
 import { router } from "@/router"
 
-import type { LocationAsPath, RouteLocationOptions, RouteQueryAndHash } from "vue-router"
 import { RouteState } from "@/types/route"
+import { RouteLocationRaw } from "vue-router";
 
 const { year1, year2, value1, inflationType, part } = calculatorState
 
@@ -19,7 +19,7 @@ export const setupWatch = () => {
       s: showInfo.value ? 1 : 0
     }
 
-    const location: (RouteQueryAndHash & LocationAsPath & RouteLocationOptions) = {
+    const location: RouteLocationRaw = {
       path: '/',
       query: state
     }
