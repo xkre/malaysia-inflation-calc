@@ -1,10 +1,12 @@
 <template>
-  <div class="flex flex-col container flex-wrap">
-    <div v-for="yearInflation in yearlyInflation" :key="yearInflation.year" class="flex flex-row self-center">
-      <div class=""> {{ yearInflation.year }}: </div>    
-      <div class="pl-2"> {{ yearInflation.inflation.toFixed(2) }} </div>    
-      <div class="pl-2"> {{ yearInflation.value.toFixed(2) }} </div>    
-    </div>
+  <div>
+    <ul v-for="yearInflation in yearlyInflation" :key="yearInflation.year">
+      <li class="flex space-x-2 py-1">
+        <div class="font-semibold"> {{ yearInflation.year }}: </div>    
+        <div class="pl-2"> {{ yearInflation.inflation.toFixed(2) }} </div>    
+        <div class="pl-2"> {{ yearInflation.value.toFixed(2) }} </div>    
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -42,9 +44,3 @@ const yearlyInflation = computed((): YearlyInflationValue [] => {
   return yearlyInflationPrices
 })
 </script>
-
-<style lang="scss" scoped>
-.container {
-  max-height: calc(100vh - 20rem);
-}
-</style>
