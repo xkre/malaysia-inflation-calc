@@ -1,4 +1,4 @@
-import { RouteState } from "../types/route"
+import { RouteState } from "@/types/route"
 
 type routeKeys = `${keyof RouteState}`
 

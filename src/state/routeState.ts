@@ -1,10 +1,10 @@
-import { calculatorState } from "./calculatorState"
-import { showInfo } from "../state/infoState"
+import { calculatorState } from "@/state/calculatorState"
+import { showInfo } from "@/state/infoState"
 import { watch } from 'vue'
-import { router } from "../router"
+import { router } from "@/router"
 
 import type { LocationAsPath, RouteLocationOptions, RouteQueryAndHash } from "vue-router"
-import { RouteState } from "../types/route"
+import { RouteState } from "@/types/route"
 
 const { year1, year2, value1, inflationType, part } = calculatorState
 

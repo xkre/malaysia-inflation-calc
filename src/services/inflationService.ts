@@ -5,10 +5,10 @@ import {
   cpiSemenanjung, 
   inflation 
 } from "../assets/data"
-import { bigMacIndex } from "../assets/data/misc/bigMacIndex"
+import { bigMacIndex } from "@/assets/data/misc/bigMacIndex"
 
-import { InflationType } from "../types/InflatitonTypeEnum"
-import { MalaysiaPart } from "../types/malaysiaPartEnum"
+import { InflationType } from "@/types/InflatitonTypeEnum"
+import { MalaysiaPart } from "@/types/malaysiaPartEnum"
 
 export const getYearlyInflation = (year1: number, year2: number): YearlyInflation[] => {
   const smaller = year1 < year2 ? year1 : year2

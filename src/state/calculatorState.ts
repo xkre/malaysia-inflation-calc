@@ -1,7 +1,7 @@
 import { ref } from 'vue'
-import { getQueryParam } from '../services/routeService'
-import { InflationType } from '../types/InflatitonTypeEnum'
-import { MalaysiaPart } from '../types/malaysiaPartEnum'
+import { getQueryParam } from '@/services/routeService'
+import { InflationType } from '@/types/InflatitonTypeEnum'
+import { MalaysiaPart } from '@/types/malaysiaPartEnum'
 
 const year1 = Number(getQueryParam('y1') ?? 2005)
 const year2 = Number(getQueryParam('y2') ?? 2020)

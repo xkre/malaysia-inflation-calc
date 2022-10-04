@@ -26,8 +26,8 @@
 </template>
 
 <script setup lang="ts">
-import { calculatorState } from '../state/calculatorState'
-import { InflationType } from '../types/InflatitonTypeEnum'
+import { calculatorState } from '@/state/calculatorState'
+import { InflationType } from '@/types/InflatitonTypeEnum'
 
 const { inflationType } = calculatorState
 </script>
