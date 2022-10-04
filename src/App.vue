@@ -1,9 +1,11 @@
 <template>
-  <div class="app-container flex flex-col justify-between pt-8">
-    <div class="flex flex-col">
-      <h1 class="mb-6">Malaysia Inflation Calculator</h1>
-      <calculator></calculator>
-      <detailed-info class="mt-4"></detailed-info>
+  <div class="h-screen flex flex-col">
+    <main-header></main-header>
+    <div class="container mx-auto px-4 md:px-0">
+      <div class="max-w-screen-sm mx-auto">
+        <calculator></calculator>
+        <detailed-info></detailed-info>
+      </div>
     </div>
 
     <data-source></data-source>
@@ -16,6 +18,7 @@
 import Calculator from './components/Calculator.vue';
 import DetailedInfo from './components/DetailedInfo.vue';
 import DataSource from './components/DataSource.vue';
+import MainHeader from './components/MainHeader.vue';
 </script>
 
 <style lang="scss">
@@ -23,19 +26,5 @@ import DataSource from './components/DataSource.vue';
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  
-
-  @apply px-4;
-
-  h1 {
-    @apply text-xl;
-  }
-
-  .app-container {
-    max-width: calc(100vw - 1rem);
-    height: calc(100vh - 1rem);
-  }
 }
 </style>
