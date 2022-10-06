@@ -3,7 +3,8 @@
     <div class="container mx-auto px-4 xl:px-0 flex justify-between items-center">
       <div class="flex space-x-4 items-center">
         <img src="/logo.png" width="28" height="28" alt="Malaysia Inflation Calculator">
-        <p class="text-xl hidden md:inline-block">Malaysia Inflation Calculator</p>
+        <!-- WIP: commented as when the page about, tnc and policy are ready, this will be visible -->
+        <!-- <p class="text-xl hidden md:inline-block">Malaysia Inflation Calculator</p> -->
       </div>
       <div class="flex space-x-4 items-center">
         <!-- icon github, fontawesome -->
@@ -42,7 +43,8 @@
   </header>
 
   <section class="max-w-screen-sm mx-auto px-4 md:px-0 mb-8">
-    <img src="/logo.png" width="40" height="40" alt="Malaysia Inflation Calculator" class="mb-7">
+    <!-- WIP: commented as when the page about, tnc and policy are ready, this will be visible -->
+    <!-- <img src="/logo.png" width="40" height="40" alt="Malaysia Inflation Calculator" class="mb-7"> -->
     <h1 class="text-3xl md:text-5xl mb-4">Malaysia Inflation Calculator</h1>
     <p class="text-lg">A simple calculator that calculates the equivalent purchasing power between two time periods. Use official published data from Department of Statistics, Malaysia and other third party sources for the misc data such as Big Mac Index.</p>
   </section>
