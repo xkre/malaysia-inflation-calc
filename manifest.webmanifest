@@ -1,1 +1,1 @@
-{"name":"malaysia-inflation-calc","short_name":"malaysia-inflation-calc","start_url":"/","display":"standalone","background_color":"#ffffff","lang":"en","scope":"/"}
+{"name":"Malaysia Inflation Calculator","short_name":"InflationCalc","start_url":"/","display":"standalone","background_color":"#ffffff","lang":"en","scope":"/","description":"Simple calculator that calculates the equivalent purchasing power between two time periods","icons":[{"src":"logo.png","sizes":"160x160","type":"image/png"}]}
