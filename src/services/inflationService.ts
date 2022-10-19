@@ -10,14 +10,18 @@ import { bigMacIndex } from "@/assets/data/misc/bigMacIndex"
 import { InflationType } from "@/types/InflatitonTypeEnum"
 import { MalaysiaPart } from "@/types/malaysiaPartEnum"
 
+const inflationYears = Object.keys(inflation).map(x => parseInt(x))
+const beginYear = inflationYears[0]
+const endYear = inflationYears[inflationYears.length-1]
+
 export const getYearlyInflation = (year1: number, year2: number): YearlyInflation[] => {
   const smaller = year1 < year2 ? year1 : year2
   const larger = year1 > year2 ? year1 : year2
 
-  if (smaller < 1959) throw 'No Data'
-  if (larger > 2021) throw 'No Data'
+  if (smaller < beginYear) throw 'No Data'
+  if (larger > endYear) throw 'No Data'
 
-  const inflationYear = Object.keys(inflation)
+  const yearlyInflation = Object.keys(inflation)
     .map(x => Number(x))
     .filter(x => x > smaller && x <= larger)
     .map(x => ({
@@ -25,7 +29,7 @@ export const getYearlyInflation = (year1: number, year2: number): YearlyInflatio
       inflation: inflation[x]
     }))
 
-  return inflationYear
+  return yearlyInflation
 }
 
 export const getCumulativeInflation = (year1: number, year2: number): number => {
