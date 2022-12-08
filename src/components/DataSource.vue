@@ -16,7 +16,7 @@
           <a target="_blank" href="https://www.data.gov.my/data/ms_MY/dataset/consumer-price-index-cpi-for-main-groups-peninsular-malaysiasabah-and-sarawak-annual">(2000 - 2005)</a> 
           <a target="_blank" href="https://www.data.gov.my/data/ms_MY/dataset/consumer-price-index-2010-100-index-number-for-main-groups-malaysia-annual">(2005 - 2020)</a> 
           <br />
-          <a target="_blank" href="https://newss.statistics.gov.my/newss-portalx/ep/epFreeDownloadContentSearch.seam?cid=13057"> newss.statistics.gov.my (2021 - 2022(AUG))</a>
+          <a target="_blank" href="https://newss.statistics.gov.my/newss-portalx/ep/epFreeDownloadContentSearch.seam"> newss.statistics.gov.my (2021 - 2022(OCT))</a>
           <br />
           <a target="_blank" href="https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Finflation-calc.xkre.me%2Fdata%2FCpiDataset.xlsx">Raw data</a>
         </li>
