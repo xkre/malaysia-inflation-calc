@@ -12,7 +12,11 @@
     "lib": ["esnext", "dom"],
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "types": [
+      "vite/client",
+      "vite-plugin-pwa/client"
+    ]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 }
