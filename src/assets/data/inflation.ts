@@ -61,5 +61,5 @@ export const inflation: InflationDataset = {
   2019:	0.662891866,
   2020:	-1.138702154,
   2021:	2.5,
-  2022: 3.22
+  2022: 3.29
 }
