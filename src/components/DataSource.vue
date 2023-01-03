@@ -8,9 +8,12 @@
           (1960 - 2021),
           estimate (2022)
         </li>
-        <li v-else-if="inflationType === InflationType.BigMac">
-          <a target="_blank" href="https://data.nasdaq.com/data/ECONOMIST/BIGMAC_MYS-big-mac-index-malaysia"> data.nasdaq.com </a> 
-        </li>
+        <template v-else-if="inflationType === InflationType.BigMac">
+          <li >
+            <a target="_blank" href="https://data.nasdaq.com/data/ECONOMIST/BIGMAC_MYS-big-mac-index-malaysia"> data.nasdaq.com </a> 
+          </li>
+          <li> McDonald's® (Malaysia) App (2023) </li>
+        </template>
         <li v-else>
           data.gov.my
           <a target="_blank" href="https://www.data.gov.my/data/ms_MY/dataset/consumer-price-index-cpi-for-main-groups-peninsular-malaysiasabah-and-sarawak-annual">(2000 - 2005)</a> 
