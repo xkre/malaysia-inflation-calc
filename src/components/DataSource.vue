@@ -13,7 +13,7 @@
             <a target="_blank" href="https://open.dosm.gov.my/publications?page=1&pub_type=cpi">
               open.dosm.gov.my
             </a>
-            (2022)
+            (2022 -2023[Nov])
           </li>
         </template>
         <template v-else-if="inflationType === InflationType.BigMac">
@@ -33,7 +33,7 @@
           </li>
           <li>
             <a target="_blank" href="https://open.dosm.gov.my/publications?page=1&pub_type=cpi">open.dosm.gov.my</a> 
-            (2021 - 2022)
+            (2021 - 2023[Nov])
           </li>
           <li>
             <a target="_blank"

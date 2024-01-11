@@ -338,5 +338,20 @@ export const cpiMalaysia: CPIDataset = {
     education: 122.4,
     restaurantHotels: 139.5333333,
     misc: 118.8666667,
-  }
+  },
+  2023: {
+    total: 130.375,
+    food: 151.9833333,
+    alcoholTobacco: 171.2416667,
+    clothing: 93.45833333,
+    housing: 125.2583333,
+    furnishing: 125.6083333,
+    health: 128.1666667,
+    transport: 120.5,
+    communication: 94.64166667,
+    recreative: 117.0083333,
+    education: 124.6666667,
+    restaurantHotels: 147.25,
+    misc: 121.7833333,
+  },
 }
