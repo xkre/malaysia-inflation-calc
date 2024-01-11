@@ -4,9 +4,9 @@ import { InflationType } from '@/types/InflatitonTypeEnum'
 import { MalaysiaPart } from '@/types/malaysiaPartEnum'
 
 const year1 = Number(getQueryParam('y1') ?? 2005)
-const year2 = Number(getQueryParam('y2') ?? 2020)
+const year2 = Number(getQueryParam('y2') ?? 2022)
 const value1 = Number(getQueryParam('v1') ?? 1500)
-const inflationType = (getQueryParam('i') ?? InflationType.General) as InflationType
+const inflationType = (getQueryParam('i') ?? InflationType.TotalCPI) as InflationType
 const part = Number(getQueryParam('p') ?? MalaysiaPart.Malaysia) as MalaysiaPart
 
 export const calculatorState = {
