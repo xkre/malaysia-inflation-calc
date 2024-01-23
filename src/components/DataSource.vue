@@ -13,7 +13,7 @@
             <a target="_blank" href="https://open.dosm.gov.my/publications?page=1&pub_type=cpi">
               open.dosm.gov.my
             </a>
-            (2022 -2023[Nov])
+            (2022 -2023)
           </li>
         </template>
         <template v-else-if="inflationType === InflationType.BigMac">
@@ -21,7 +21,7 @@
             <a target="_blank" href="https://data.nasdaq.com/data/ECONOMIST/BIGMAC_MYS-big-mac-index-malaysia">
               data.nasdaq.com </a>
           </li>
-          <li> McDonald's® (Malaysia) App (2023) </li>
+          <li> McDonald's® (Malaysia) App (2023 - 2024) </li>
         </template>
         <template v-else>
           <li>
@@ -33,7 +33,7 @@
           </li>
           <li>
             <a target="_blank" href="https://open.dosm.gov.my/publications?page=1&pub_type=cpi">open.dosm.gov.my</a> 
-            (2021 - 2023[Nov])
+            (2021 - 2023)
           </li>
           <li>
             <a target="_blank"
