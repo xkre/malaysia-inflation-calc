@@ -3,20 +3,20 @@
     <div class="mb-7">
       <label for="type" class="block font-medium text-gray-700">Type</label>
       <select id="type" v-model="inflationType" @change="typeChanged" class="mt-2 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500">
-        <option :value="InflationType.General"> General Inflation (1960 - 2023) </option>
-        <option :value="InflationType.TotalCPI"> Overall CPI (2000 - 2023)</option>
-        <option :value="InflationType.Food"> Food (2000 - 2023) </option>
+        <option :value="InflationType.General"> General Inflation (1960 - 2024) </option>
+        <option :value="InflationType.TotalCPI"> Overall CPI (2000 - 2025)</option>
+        <option :value="InflationType.Food"> Food (2000 - 2025) </option>
         <option :value="InflationType.AlcoholTobacco"> Alcoholic Beverages and Tobacco (2000 - 2023) </option>
-        <option :value="InflationType.Clothing"> Clothing and Footwear (2000 - 2023) </option>
-        <option :value="InflationType.Housing"> Housing, Water, Electricity, Gas and Other Fuels (2000 - 2023) </option>
-        <option :value="InflationType.Furnishing"> Furnishings, Households Equipment and Routine Household Maintenance (2000 - 2023) </option>
-        <option :value="InflationType.Health"> Health (2000 - 2023)</option>
-        <option :value="InflationType.Transport"> Transport (2000 - 2023) </option>
-        <option :value="InflationType.Communication"> Communication (2000 - 2023) </option>
-        <option :value="InflationType.Recreative"> Recreation Services and Culture (2000 - 2023) </option>
-        <option :value="InflationType.Education"> Education (2000 - 2023) </option>
-        <option :value="InflationType.RestaurantHotels"> Restaurants and Hotels (2000 - 2023) </option>
-        <option :value="InflationType.Misc"> Miscellaneous Goods and Services (2000 - 2023) </option>
+        <option :value="InflationType.Clothing"> Clothing and Footwear (2000 - 2025) </option>
+        <option :value="InflationType.Housing"> Housing, Water, Electricity, Gas and Other Fuels (2000 - 2025) </option>
+        <option :value="InflationType.Furnishing"> Furnishings, Households Equipment and Routine Household Maintenance (2000 - 2025) </option>
+        <option :value="InflationType.Health"> Health (2000 - 2025)</option>
+        <option :value="InflationType.Transport"> Transport (2000 - 2025) </option>
+        <option :value="InflationType.Communication"> Communication (2000 - 2025) </option>
+        <option :value="InflationType.Recreative"> Recreation Services and Culture (2000 - 2025) </option>
+        <option :value="InflationType.Education"> Education (2000 - 2025) </option>
+        <option :value="InflationType.RestaurantHotels"> Restaurants and Hotels (2000 - 2025) </option>
+        <option :value="InflationType.Misc"> Miscellaneous Goods and Services (2000 - 2025) </option>
         <option :value="InflationType.BigMac"> Big Mac Index (2000 - 2024) </option>
       </select>
     </div>
