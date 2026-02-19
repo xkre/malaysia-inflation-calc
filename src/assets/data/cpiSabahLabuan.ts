@@ -354,4 +354,37 @@ export const cpiSabahLabuan: CPIDataset = {
     restaurantHotels: 153.5083333,
     misc: 118.6666667,
   },
+  2024: {
+    total: 122.3,
+    food: 137.7,
+    alcoholTobacco: 174.6,
+    clothing: 90.7,
+    housing: 113.4,
+    furnishing: 118.4,
+    health: 133.9,
+    transport: 114.5,
+    communication: 97.4,
+    recreative: 120.6,
+    education: 118.7,
+    restaurantHotels: 158.3,
+    insurance: 111.1,
+    misc: 122.2
+  },
+  2025: {
+    total: 123.7,
+    food: 140.4,
+    alcoholTobacco: 174.3,
+    clothing: 89.6,
+    housing: 114.8,
+    furnishing: 118.2,
+    health: 135.2,
+    transport: 114.6,
+    communication: 95.3,
+    recreative: 121.8,
+    education: 121.4,
+    restaurantHotels: 165.6,
+    insurance: 116,
+    misc: 126
+  },
+
 }

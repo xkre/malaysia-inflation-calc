@@ -354,4 +354,37 @@ export const cpiSemenanjung: CPIDataset = {
     restaurantHotels: 147.3333333,
     misc: 122.275,
   },
+  2024: {
+    total: 134,
+    food: 157.3,
+    alcoholTobacco: 174.2,
+    clothing: 93.7,
+    housing: 131.5,
+    furnishing: 128.2,
+    health: 130.2,
+    transport: 121.8,
+    communication: 92.9,
+    recreative: 119.6,
+    education: 127.5,
+    restaurantHotels: 152,
+    insurance: 110.8,
+    misc: 126.1
+  },
+  2025: {
+    total: 136,
+    food: 160.6,
+    alcoholTobacco: 176,
+    clothing: 93.6,
+    housing: 133.7,
+    furnishing: 128.5,
+    health: 131.8,
+    transport: 122.4,
+    communication: 88.8,
+    recreative: 121,
+    education: 130.4,
+    restaurantHotels: 156.8,
+    insurance: 114.7,
+    misc: 131.8
+  },
+
 }
