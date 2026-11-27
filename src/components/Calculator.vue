@@ -3,40 +3,41 @@
     <div class="mb-7">
       <label for="type" class="block font-medium text-gray-700">Type</label>
       <select id="type" v-model="inflationType" @change="typeChanged" class="mt-2 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500">
-        <option :value="InflationType.General"> General Inflation (1960 - 2024) </option>
-        <option :value="InflationType.TotalCPI"> Overall CPI (2000 - 2025)</option>
-        <option :value="InflationType.Food"> Food (2000 - 2025) </option>
-        <option :value="InflationType.AlcoholTobacco"> Alcoholic Beverages and Tobacco (2000 - 2023) </option>
-        <option :value="InflationType.Clothing"> Clothing and Footwear (2000 - 2025) </option>
-        <option :value="InflationType.Housing"> Housing, Water, Electricity, Gas and Other Fuels (2000 - 2025) </option>
-        <option :value="InflationType.Furnishing"> Furnishings, Households Equipment and Routine Household Maintenance (2000 - 2025) </option>
-        <option :value="InflationType.Health"> Health (2000 - 2025)</option>
-        <option :value="InflationType.Transport"> Transport (2000 - 2025) </option>
-        <option :value="InflationType.Communication"> Communication (2000 - 2025) </option>
-        <option :value="InflationType.Recreative"> Recreation Services and Culture (2000 - 2025) </option>
-        <option :value="InflationType.Education"> Education (2000 - 2025) </option>
-        <option :value="InflationType.RestaurantHotels"> Restaurants and Hotels (2000 - 2025) </option>
-        <option :value="InflationType.Misc"> Miscellaneous Goods and Services (2000 - 2025) </option>
-        <option :value="InflationType.BigMac"> Big Mac Index (2000 - 2024) </option>
+        <option :value="InflationType.General"> General Inflation (1960 - 2025) </option>
+        <option :value="InflationType.TotalCPI"> Overall CPI (1960 - 2026) </option>
+        <option :value="InflationType.Food"> Food (1980 - 2026) </option>
+        <option :value="InflationType.AlcoholTobacco"> Alcoholic Beverages and Tobacco (1980 - 2026) </option>
+        <option :value="InflationType.Clothing"> Clothing and Footwear (1980 - 2026) </option>
+        <option :value="InflationType.Housing"> Housing, Water, Electricity, Gas and Other Fuels (1980 - 2026) </option>
+        <option :value="InflationType.Furnishing"> Furnishings, Households Equipment and Routine Household Maintenance (1980 - 2026) </option>
+        <option :value="InflationType.Health"> Health (1980 - 2026) </option>
+        <option :value="InflationType.Transport"> Transport (1980 - 2026) </option>
+        <option :value="InflationType.Communication"> Communication (2003 - 2026) </option>
+        <option :value="InflationType.Recreative"> Recreation Services and Culture (1980 - 2026) </option>
+        <option :value="InflationType.Education"> Education (2003 - 2026) </option>
+        <option :value="InflationType.RestaurantHotels"> Restaurants and Hotels (2003 - 2026) </option>
+        <option :value="InflationType.Insurance"> Insurance & Financial Services (2010 - 2026) </option>
+        <option :value="InflationType.Misc"> Miscellaneous Goods and Services (2003 - 2026) </option>
+        <option :value="InflationType.BigMac"> Big Mac Index (2000 - 2026) </option>
       </select>
     </div>
-    <div class="flex flex-col md:flex-row md:space-x-7 space-y-4 md:space-y-0 mb-7" v-if="inflationType !== InflationType.General">
-      <div class="flex items-center">
-        <input id="MalaysiaPart.Malaysia" v-model="part" :value="MalaysiaPart.Malaysia" name="MalaysiaPart" type="radio" class="h-6 w-6 border-gray-300 text-blue-600 focus:ring-blue-500">
-        <label for="MalaysiaPart.Malaysia" class="ml-3 block font-medium text-gray-700">Malaysia</label>
-      </div>
-      <div class="flex items-center">
-        <input id="MalaysiaPart.Semenanjung" v-model="part" :value="MalaysiaPart.Semenanjung" name="MalaysiaPart" type="radio" class="h-6 w-6 border-gray-300 text-blue-600 focus:ring-blue-500">
-        <label for="MalaysiaPart.Semenanjung" class="ml-3 block font-medium text-gray-700">Semenanjung</label>
-      </div>
-      <div class="flex items-center">
-        <input id="MalaysiaPart.SabahLabuan" v-model="part" :value="MalaysiaPart.SabahLabuan" name="MalaysiaPart" type="radio" class="h-6 w-6 border-gray-300 text-blue-600 focus:ring-blue-500">
-        <label for="MalaysiaPart.SabahLabuan" class="ml-3 block font-medium text-gray-700">Sabah & Labuan</label>
-      </div>
-      <div class="flex items-center">
-        <input id="MalaysiaPart.Sarawak" v-model="part" :value="MalaysiaPart.Sarawak" name="MalaysiaPart" type="radio" class="h-6 w-6 border-gray-300 text-blue-600 focus:ring-blue-500">
-        <label for="MalaysiaPart.Sarawak" class="ml-3 block font-medium text-gray-700">Sarawak</label>
-      </div>
+    <div class="mb-7" v-if="inflationType !== InflationType.General && inflationType !== InflationType.BigMac">
+      <label for="part" class="block font-medium text-gray-700">State / Region</label>
+      <select id="part" v-model.number="part" class="mt-2 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500">
+        <optgroup label="National & Macro Regions">
+          <option v-for="opt in macroRegionOptions" :key="opt.label" :value="opt.value">
+            {{ formatPartOptionLabel(opt.label, opt.value) }}
+          </option>
+        </optgroup>
+        <optgroup label="States & Federal Territories">
+          <option v-for="opt in stateOptions" :key="opt.label" :value="opt.value">
+            {{ formatPartOptionLabel(opt.label, opt.value) }}
+          </option>
+        </optgroup>
+      </select>
+      <p v-if="isDifferentFromMain && selectedPartYearRange" class="mt-2 text-sm text-gray-500">
+        Data available for selected state/region: {{ selectedPartYearRange.min }} - {{ selectedPartYearRange.max }}
+      </p>
     </div>
     <div class="flex flex-col md:flex-row md:space-x-7 space-y-7 md:space-y-0 mb-7">
       <div class="md:w-1/2">
@@ -74,12 +75,58 @@ import { calculatorState } from "../state/calculatorState"
 
 <script setup lang="ts">
 import { computed } from "vue"
-import { getCumulativeInflation, getCPIRate } from '@/services/inflationService'
+import { getCumulativeInflation, getCPIRate, getAvailableYearRange } from '@/services/inflationService'
 import { InflationType } from '@/types/InflatitonTypeEnum'
 import { MalaysiaPart } from "@/types/malaysiaPartEnum"
 import { trackEvent } from "@/helpers/matomo"
 
 const { year1, year2, value1, inflationType, part } = calculatorState
+
+const macroRegionOptions = [
+  { value: MalaysiaPart.Malaysia, label: 'Malaysia (National)' },
+  { value: MalaysiaPart.Semenanjung, label: 'Semenanjung (Peninsular Malaysia)' },
+  { value: MalaysiaPart.SabahLabuan, label: 'Sabah & Labuan' },
+  { value: MalaysiaPart.Sarawak, label: 'Sarawak' },
+]
+
+const stateOptions = [
+  { value: MalaysiaPart.Johor, label: 'Johor' },
+  { value: MalaysiaPart.Kedah, label: 'Kedah' },
+  { value: MalaysiaPart.Kelantan, label: 'Kelantan' },
+  { value: MalaysiaPart.Melaka, label: 'Melaka' },
+  { value: MalaysiaPart.NegeriSembilan, label: 'Negeri Sembilan' },
+  { value: MalaysiaPart.Pahang, label: 'Pahang' },
+  { value: MalaysiaPart.Perak, label: 'Perak' },
+  { value: MalaysiaPart.Perlis, label: 'Perlis' },
+  { value: MalaysiaPart.PulauPinang, label: 'Pulau Pinang' },
+  { value: MalaysiaPart.Sabah, label: 'Sabah (State)' },
+  { value: MalaysiaPart.Sarawak, label: 'Sarawak (State)' },
+  { value: MalaysiaPart.Selangor, label: 'Selangor' },
+  { value: MalaysiaPart.Terengganu, label: 'Terengganu' },
+  { value: MalaysiaPart.KualaLumpur, label: 'W.P. Kuala Lumpur' },
+  { value: MalaysiaPart.Labuan, label: 'W.P. Labuan' },
+  { value: MalaysiaPart.Putrajaya, label: 'W.P. Putrajaya' },
+]
+
+const mainYearRange = computed(() => getAvailableYearRange(inflationType.value, MalaysiaPart.Malaysia))
+const selectedPartYearRange = computed(() => getAvailableYearRange(inflationType.value, part.value))
+
+const isDifferentFromMain = computed(() => {
+  if (!mainYearRange.value || !selectedPartYearRange.value) return false
+  return (
+    selectedPartYearRange.value.min !== mainYearRange.value.min ||
+    selectedPartYearRange.value.max !== mainYearRange.value.max
+  )
+})
+
+const formatPartOptionLabel = (baseLabel: string, partValue: MalaysiaPart): string => {
+  const range = getAvailableYearRange(inflationType.value, partValue)
+  const main = mainYearRange.value
+  if (range && (!main || range.min !== main.min || range.max !== main.max)) {
+    return `${baseLabel} (${range.min} - ${range.max})`
+  }
+  return baseLabel
+}
 
 const value2 = computed((): string => {
   try {

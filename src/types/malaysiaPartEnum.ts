@@ -1,6 +1,21 @@
 export enum MalaysiaPart {
-  Semenanjung,
-  SabahLabuan,
-  Sarawak,
-  Malaysia
+  Semenanjung = 0,
+  SabahLabuan = 1,
+  Sarawak = 2,
+  Malaysia = 3,
+  Johor = 4,
+  Kedah = 5,
+  Kelantan = 6,
+  Melaka = 7,
+  NegeriSembilan = 8,
+  Pahang = 9,
+  Perak = 10,
+  Perlis = 11,
+  PulauPinang = 12,
+  Sabah = 13,
+  Selangor = 14,
+  Terengganu = 15,
+  KualaLumpur = 16,
+  Labuan = 17,
+  Putrajaya = 18
 }

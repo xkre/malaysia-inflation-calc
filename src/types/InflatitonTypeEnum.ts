@@ -12,6 +12,7 @@ export enum InflationType {
   Recreative ='recreative',
   Education ='education',
   RestaurantHotels = 'restaurantHotels',
+  Insurance = 'insurance',
   Misc = 'misc',
   BigMac = 'bigMac'
 }

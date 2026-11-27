@@ -4,12 +4,14 @@ import { watch } from 'vue'
 import { router } from "@/router"
 
 import { RouteState } from "@/types/route"
-import { RouteLocationRaw } from "vue-router";
+import { RouteLocationRaw } from "vue-router"
 
 const { year1, year2, value1, inflationType, part } = calculatorState
 
 export const setupWatch = () => {
   watch([year1, year2, value1, inflationType, part, showInfo], () => {
+    if (router.currentRoute.value.name !== 'simple') return
+
     const state: RouteState = {
       y1: year1.value,
       y2: year2.value,
@@ -20,7 +22,7 @@ export const setupWatch = () => {
     }
 
     const location: RouteLocationRaw = {
-      path: '/',
+      name: 'simple',
       query: state
     }
 

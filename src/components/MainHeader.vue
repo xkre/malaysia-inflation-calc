@@ -46,6 +46,6 @@
     <!-- WIP: commented as when the page about, tnc and policy are ready, this will be visible -->
     <!-- <img src="/logo.png" width="40" height="40" alt="Malaysia Inflation Calculator" class="mb-7"> -->
     <h1 class="text-3xl md:text-5xl mb-4">Malaysia Inflation Calculator</h1>
-    <p class="text-lg">A simple calculator that calculates the equivalent purchasing power between two time periods. Use official published data from Department of Statistics, Malaysia and other third party sources for the misc data such as Big Mac Index.</p>
+    <p class="text-lg">Calculate the equivalent purchasing power of the Ringgit between two time periods. Uses official published data from the Department of Statistics Malaysia (DOSM), along with third-party benchmarks such as the Big Mac Index.</p>
   </section>
 </template>
