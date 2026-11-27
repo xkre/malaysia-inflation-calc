@@ -1,6 +1,7 @@
 export const trackEvent = (category: string, action: string, name?: string) => {
-  var tracker = window._paq
-  
+  const tracker = window._paq
+  if (!tracker) return
+
   if (!name)
     tracker.push(['trackEvent', category, action])
   else

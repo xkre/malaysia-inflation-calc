@@ -3,6 +3,7 @@ import {
   cpiSabahLabuan, 
   cpiSarawak, 
   cpiSemenanjung, 
+  cpiStates,
   inflation 
 } from "../assets/data"
 import { bigMacIndex } from "@/assets/data/misc/bigMacIndex"
@@ -78,6 +79,8 @@ const getCPIData = (part: MalaysiaPart): CPIDataset => {
     cpiData = cpiSabahLabuan
   } else if (part === MalaysiaPart.Sarawak) {
     cpiData = cpiSarawak
+  } else if (cpiStates[part]) {
+    cpiData = cpiStates[part]!
   } else {
     throw 'Error: Malaysia Part selection'
   }
@@ -123,4 +126,150 @@ export const getCPIRate = (year1: number, year2: number, type: InflationType, pa
   console.debug({ year1Cpi, year2Cpi, relativePrice })
 
   return relativePrice
+}
+
+/**
+ * Returns the inclusive min/max year range with available data for a given inflation type and region/state.
+ */
+export const getAvailableYearRange = (
+  type: InflationType,
+  part: MalaysiaPart = MalaysiaPart.Malaysia
+): { min: number; max: number } | null => {
+  if (type === InflationType.General) {
+    return { min: beginYear, max: endYear }
+  }
+
+  if (type === InflationType.BigMac) {
+    const years = Object.keys(bigMacIndex).map(Number).sort((a, b) => a - b)
+    return years.length ? { min: years[0], max: years[years.length - 1] } : null
+  }
+
+  const cpiData = getCPIData(part)
+  const years = Object.keys(cpiData)
+    .map(Number)
+    .filter(yr => cpiData[yr]?.[type] !== undefined)
+    .sort((a, b) => a - b)
+
+  return years.length ? { min: years[0], max: years[years.length - 1] } : null
+}
+
+export interface YearlyProgressionPoint {
+  year: number
+  value: number
+  metric?: number
+  yoyPct?: number
+}
+
+/**
+ * Returns chronological year-by-year equivalent RM progression for CPI and Big Mac modes.
+ * Never throws; returns an empty array if inputs or endpoints have no data.
+ */
+export const getCPISeries = (
+  year1: number,
+  year2: number,
+  value1: number,
+  type: InflationType,
+  part: MalaysiaPart
+): YearlyProgressionPoint[] => {
+  if (type === InflationType.General) return []
+  if (!Number.isInteger(year1) || !Number.isInteger(year2)) return []
+
+  const endpoints = getCPI(year1, year2, type, part)
+  if (endpoints.year1 === undefined || endpoints.year2 === undefined || endpoints.year1 === 0) {
+    return []
+  }
+
+  const baseVal = Number.isFinite(value1) ? value1 : 0
+  const startYear = Math.min(year1, year2)
+  const endYear = Math.max(year1, year2)
+  const points: YearlyProgressionPoint[] = []
+  let prevMetric: number | undefined
+
+  for (let y = startYear; y <= endYear; y++) {
+    const cpiVal =
+      type === InflationType.BigMac ? bigMacIndex[y] : getCPIData(part)[y]?.[type]
+
+    if (cpiVal === undefined) continue
+
+    const yoyPct =
+      prevMetric !== undefined && prevMetric !== 0
+        ? ((cpiVal - prevMetric) / prevMetric) * 100
+        : undefined
+
+    points.push({
+      year: y,
+      value: baseVal * (cpiVal / endpoints.year1),
+      metric: cpiVal,
+      yoyPct,
+    })
+
+    prevMetric = cpiVal
+  }
+
+  return points
+}
+
+/**
+ * Returns chronological year-by-year compounded RM progression for General Inflation mode.
+ * Supports forward (year2 > year1) and backward (year2 < year1) ranges without throwing.
+ */
+export const getGeneralInflationSeries = (
+  year1: number,
+  year2: number,
+  value1: number
+): YearlyProgressionPoint[] => {
+  if (!Number.isInteger(year1) || !Number.isInteger(year2)) return []
+
+  const smaller = Math.min(year1, year2)
+  const larger = Math.max(year1, year2)
+  if (smaller < beginYear || larger > endYear) return []
+
+  const baseVal = Number.isFinite(value1) ? value1 : 0
+
+  if (year1 === year2) {
+    const rate = inflation[year1]
+    return rate === undefined ? [] : [{ year: year1, value: baseVal, metric: rate }]
+  }
+
+  if (year2 > year1) {
+    const points: YearlyProgressionPoint[] = [
+      { year: year1, value: baseVal, metric: inflation[year1] },
+    ]
+    let curr = baseVal
+
+    for (let y = year1 + 1; y <= year2; y++) {
+      const rate = inflation[y]
+      if (rate === undefined) return []
+      curr = curr + (rate * curr) / 100
+      points.push({
+        year: y,
+        value: curr,
+        metric: rate,
+        yoyPct: rate,
+      })
+    }
+
+    return points
+  }
+
+  // Backward range (year2 < year1): step backwards from year1, then reverse chronologically
+  const reversedPoints: YearlyProgressionPoint[] = [
+    { year: year1, value: baseVal, metric: inflation[year1], yoyPct: inflation[year1] },
+  ]
+  let curr = baseVal
+
+  for (let y = year1; y >= year2 + 1; y--) {
+    const rate = inflation[y]
+    if (rate === undefined) return []
+    curr = curr - (rate * curr) / 100
+    const prevYear = y - 1
+    reversedPoints.push({
+      year: prevYear,
+      value: curr,
+      metric: inflation[prevYear],
+      yoyPct: inflation[prevYear],
+    })
+  }
+
+  return reversedPoints.reverse()
 }

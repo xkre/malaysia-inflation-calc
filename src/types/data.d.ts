@@ -4,18 +4,19 @@ interface InflationDataset {
 
 interface CPIData extends Record<string, number | undefined> {
   total: number;
-  food: number;
+  food?: number;
   alcoholTobacco?: number;
-  clothing: number;
-  housing: number;
-  furnishing: number;
-  health: number;
-  transport: number;
-  communication: number;
-  recreative: number;
-  education: number;
+  clothing?: number;
+  housing?: number;
+  furnishing?: number;
+  health?: number;
+  transport?: number;
+  communication?: number;
+  recreative?: number;
+  education?: number;
   restaurantHotels?: number;
-  misc: number;
+  insurance?: number;
+  misc?: number;
 }
 
 interface CPIDataset {

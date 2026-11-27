@@ -3,11 +3,13 @@ import { getQueryParam } from '@/services/routeService'
 import { InflationType } from '@/types/InflatitonTypeEnum'
 import { MalaysiaPart } from '@/types/malaysiaPartEnum'
 
-const year1 = Number(getQueryParam('y1') ?? 2005)
-const year2 = Number(getQueryParam('y2') ?? 2025)
-const value1 = Number(getQueryParam('v1') ?? 1500)
-const inflationType = (getQueryParam('i') ?? InflationType.TotalCPI) as InflationType
-const part = Number(getQueryParam('p') ?? MalaysiaPart.Malaysia) as MalaysiaPart
+const isInitialSimpleRoute = !window.location.pathname.startsWith('/detailed')
+
+const year1 = Number((isInitialSimpleRoute ? getQueryParam('y1') : null) ?? 2005)
+const year2 = Number((isInitialSimpleRoute ? getQueryParam('y2') : null) ?? 2025)
+const value1 = Number((isInitialSimpleRoute ? getQueryParam('v1') : null) ?? 1500)
+const inflationType = ((isInitialSimpleRoute ? getQueryParam('i') : null) ?? InflationType.TotalCPI) as InflationType
+const part = Number((isInitialSimpleRoute ? getQueryParam('p') : null) ?? MalaysiaPart.Malaysia) as MalaysiaPart
 
 export const calculatorState = {
   year1: ref(year1),
